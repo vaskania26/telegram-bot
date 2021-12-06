@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const TOKEN = process.env.TELEGRAM_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN';
 const TelegramBot = require('node-telegram-bot-api');
 const fs = require('fs');
@@ -17,7 +15,7 @@ bot.on('message', (msg) => {
   if (text === '/start' || text === '/help') {
     return bot.sendMessage(
       chatId,
-      `Hello ${msg.chat.username}, for more information about me please send /about or /links message.`,
+      `Hello ${msg.chat.first_name}, for more information about me please send /about or /links message.`,
       {
         reply_markup: {
           keyboard: [['/about', '/links']],
