@@ -11,18 +11,17 @@ skinparam sequenceArrowThickness 2
 
 actor User
 
-User -> App: Send msg
-activate App
-App -> Telegram_Api: Send msg to api
-activate Telegram_Api
-Telegram_Api -> My_bot: Send msg to my bot
+User -> My_bot: Send msg to bot
 activate My_bot
+My_bot -> Telegram_Api: Send msg to telegram api
+activate Telegram_Api
+Telegram_Api -> App : Send msg
+activate App
 
-My_bot--> Telegram_Api: Response 
-deactivate My_bot
-Telegram_Api --> App: Response
-deactivate Telegram_Api
-App --> User: Received msg
+App--> Telegram_Api: Response
 deactivate App
-
+Telegram_Api--> My_bot: Response 
+deactivate Telegram_Api
+My_bot --> User: Received msg
+deactivate My_bot
 @enduml
