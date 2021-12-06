@@ -1,13 +1,14 @@
+require('dotenv').config();
+
 const TOKEN = process.env.TELEGRAM_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN';
 const TelegramBot = require('node-telegram-bot-api');
+const fs = require('fs');
 
 const bot = new TelegramBot(TOKEN, {
   polling: true,
 });
 
-const links = `<a href="https://github.com/vaskania">Github</a>
-<a href="https://www.linkedin.com/in/vasili-nikabadze-614b00139/">LinkedIn</a>
-<a href="https://git.foxminded.com.ua/foxstudent100710">GitLab</a>`;
+const links = fs.readFileSync('./links.html', 'utf8');
 
 bot.on('message', (msg) => {
   const text = msg.text.toLocaleLowerCase().trim();
