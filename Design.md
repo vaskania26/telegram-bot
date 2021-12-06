@@ -1,10 +1,10 @@
-# NPM Packages #
+# NPM Packages
 
 **Dependency**
 
     node-telegram-bot-api
 
-# Diagram #
+# Diagram
 
 @startuml
 skinparam sequenceArrowThickness 2
@@ -20,7 +20,7 @@ activate App
 
 App--> Telegram_Api: Response
 deactivate App
-Telegram_Api--> My_bot: Response 
+Telegram_Api--> My_bot: Response
 deactivate Telegram_Api
 My_bot --> User: Received msg
 deactivate My_bot
