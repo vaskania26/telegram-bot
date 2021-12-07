@@ -1,3 +1,3 @@
 ## Telegram bot
 
-    vaskaniaHerokubot
+    vaskaniaLoggerbot
