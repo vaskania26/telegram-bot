@@ -9,6 +9,8 @@
   },
   "rules": {
     "no-console": "error",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "operator-linebreak":"off",
+    "linebreak-style":"off"
   }
 }
